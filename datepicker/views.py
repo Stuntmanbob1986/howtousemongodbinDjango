@@ -3,6 +3,13 @@ from django.shortcuts import render
 from .models import Promise
 from .forms import PromiseForm
 from django.views.generic.edit import CreateView
+from pymongo import MongoClient
+from bson.objectid import ObjectId
+from datetime import datetime
+
+client = MongoClient('localhost', 27017)
+db = client.django_db
+entries = db.entries
 
 
 # def index(request):
@@ -24,7 +31,15 @@ class PromiseCreateView(CreateView):
         form = self.form_class(request.POST)
         if form.is_valid():
             # print('form: ', form)
+            print(type(form.cleaned_data['made_on']))
             print('form.cleaned_data: ', form.cleaned_data)
+            # entries.insert_one(form.cleaned_data)
+            # will not work, because mongodb don't accept datetime.date objects
+            entries.insert_one({
+                'title': form.cleaned_data['title'],
+                'description': form.cleaned_data['description'],
+                'made_on': datetime.combine(form.cleaned_data['made_on'], datetime.min.time())
+            })
             return HttpResponse('result')
 
         # form = PromiseForm()
