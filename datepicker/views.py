@@ -20,7 +20,13 @@ class PromiseCreateView(CreateView):
 
         return render(request, self.template_name, {'form': form})
 
-    # def post(self, request):
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            # print('form: ', form)
+            print('form.cleaned_data: ', form.cleaned_data)
+            return HttpResponse('result')
+
         # form = PromiseForm()
         # return HttpResponse('result')
 
