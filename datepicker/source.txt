@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/3367091/whats-the-cleanest-simplest-to-get-running-datepicker-in-django
+https://www.geeksforgeeks.org/createview-class-based-views-django/
