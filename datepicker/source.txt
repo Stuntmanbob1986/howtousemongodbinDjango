@@ -1,2 +1,5 @@
 https://stackoverflow.com/questions/3367091/whats-the-cleanest-simplest-to-get-running-datepicker-in-django
 https://www.geeksforgeeks.org/createview-class-based-views-django/
+
+wegen zugriff auf mongodb eintrag über _id:
+https://stackoverflow.com/questions/48038126/variables-and-attributes-may-not-begin-with-underscores-in-django-template
