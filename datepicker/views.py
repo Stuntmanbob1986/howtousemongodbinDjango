@@ -53,12 +53,9 @@ class PromiseCreateView(CreateView):
 
 
 def delete(request, id):
-    print(id)
-    entry = get_object_or_404(Promise, id=id)
-    print(entry)
+    # print(f'id: {id}, type(id): {type(id)}')
+    # print(f'ObjectId(id): {ObjectId(id)}')
+    entries.delete_one({"_id": ObjectId(id)})
 
-    if request.method == 'POST':
-        entry.delete()
-        return redirect('/')
-
-    return render(request, 'promise_form.html', {'entry': entry})
+    # return render(request, 'promise_form.html', {'form': form, 'entries': all_entries})
+    return redirect('/datepicker')

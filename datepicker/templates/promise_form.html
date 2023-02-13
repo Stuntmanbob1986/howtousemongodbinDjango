@@ -11,6 +11,7 @@
     <div class="entry">
 
         <p>{{ entry.title }}, {{ entry.description }}, {{ entry.made_on }}, {{ entry|underscoreTag:'_id' }}</p>
+        <a class="btn btn-outline-danger" href="{% url 'datepicker:delete' id=entry|underscoreTag:'_id' %}">Delete</a>
 
     </div>
 {% endfor %}
