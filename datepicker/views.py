@@ -60,3 +60,7 @@ def delete(request, id):
 
     # return render(request, '_promise_form.html', {'form': form, 'entries': all_entries})
     return redirect('/datepicker')
+
+
+# def home(response):
+#     return render(response, "main/home.html", {})
