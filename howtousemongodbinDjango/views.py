@@ -1,5 +1,7 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 
-def index(request):
-    return HttpResponse("Hello world")
+def index(response):
+    # return HttpResponse("Hello world")
+    return render(response, "todoList/base.html", {})

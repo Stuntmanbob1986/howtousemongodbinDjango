@@ -20,6 +20,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('home/', views.index, name='index'),
     # path('', PromiseCreateView.as_view() ),
     path('datepicker/', include('datepicker.urls')),
     path('todolist/', include('todoList.urls')),

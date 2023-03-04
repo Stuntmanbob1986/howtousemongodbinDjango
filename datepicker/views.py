@@ -20,7 +20,8 @@ class PromiseCreateView(CreateView):
     model = Promise
     form_class = PromiseForm
     # the cg part
-    template_name = 'promise_form.html'
+    # template_name = '_promise_form.html'
+    template_name = 'todoList/datepicker.html'
     def get(self, request):
         # return HttpResponse('result')
         form = self.form_class()
@@ -57,5 +58,5 @@ def delete(request, id):
     # print(f'ObjectId(id): {ObjectId(id)}')
     entries.delete_one({"_id": ObjectId(id)})
 
-    # return render(request, 'promise_form.html', {'form': form, 'entries': all_entries})
+    # return render(request, '_promise_form.html', {'form': form, 'entries': all_entries})
     return redirect('/datepicker')

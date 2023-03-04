@@ -1,10 +1,16 @@
-<form action="" method="post">{% csrf_token %}
+{% extends 'todoList/base.html' %}
+
+{% block title %}
+Datepicker
+{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Create" />
-    <!--<button type="submit", name="save">Create New</button>-->
-
+    <button type="submit", name="save">Create New</button>
 </form>
-<hr>
 {% load tagger %}
 {% for entry in entries %}
 
@@ -15,3 +21,4 @@
 
     </div>
 {% endfor %}
+{% endblock %}
