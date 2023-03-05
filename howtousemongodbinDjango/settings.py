@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todoList.apps.TodolistConfig',
     'datepicker.apps.DatepickerConfig',
+    'showbinancedata.apps.ShowbinancedataConfig',
 ]
 
 MIDDLEWARE = [

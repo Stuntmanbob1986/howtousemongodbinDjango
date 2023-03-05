@@ -9,7 +9,6 @@ Datepicker
 <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Create" />
     <button type="submit", name="save">Create New</button>
 </form>
 {% load tagger %}
@@ -19,6 +18,7 @@ Datepicker
 
         <p>{{ entry.title }}, {{ entry.description }}, {{ entry.made_on }}, {{ entry|underscoreTag:'_id' }}</p>
         <a class="btn btn-outline-danger" href="{% url 'datepicker:delete' id=entry|underscoreTag:'_id' %}">Delete</a>
+        <a class="btn btn-outline-danger" href="{% url 'datepicker:edit' id=entry|underscoreTag:'_id' %}">Edit</a>
 
     </div>
 {% endfor %}

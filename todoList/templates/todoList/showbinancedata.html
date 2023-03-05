@@ -1,0 +1,13 @@
+{% extends 'todoList/base.html' %}
+
+{% block title %}
+ShowBinanceData
+{% endblock %}
+
+{% block content %}
+<h1>Show Binance Data</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+</form>
+{% endblock %}

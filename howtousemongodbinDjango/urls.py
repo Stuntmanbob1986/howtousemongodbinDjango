@@ -24,5 +24,6 @@ urlpatterns = [
     # path('', PromiseCreateView.as_view() ),
     path('datepicker/', include('datepicker.urls')),
     path('todolist/', include('todoList.urls')),
+    path('showbinancedata/', include('showbinancedata.urls')),
     path('admin/', admin.site.urls),
 ]

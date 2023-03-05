@@ -12,10 +12,6 @@ db = client.django_db
 entries = db.entries
 
 
-# def index(request):
-#     return HttpResponse("datepicker")
-
-
 class PromiseCreateView(CreateView):
     model = Promise
     form_class = PromiseForm
@@ -60,6 +56,10 @@ def delete(request, id):
 
     # return render(request, '_promise_form.html', {'form': form, 'entries': all_entries})
     return redirect('/datepicker')
+
+
+def edit(response, id):
+    print(id)
 
 
 # def home(response):
