@@ -1,0 +1,11 @@
+{% extends 'todoList/base.html' %}
+
+{% block title %}
+Datepicker - Detail view
+{% endblock %}
+
+{% block content %}
+{% load tagger %}
+<h1>Datepicker - Detail view</h1>
+<p>{{ entry.title }}, {{ entry.description }}, {{ entry.made_on }}, {{ entry|underscoreTag:'_id' }}</p>
+{% endblock %}

@@ -18,6 +18,7 @@ from django.urls import path, include
 from . import views
 # from .views import PromiseCreateView
 
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('home/', views.index, name='index'),
@@ -26,4 +27,5 @@ urlpatterns = [
     path('todolist/', include('todoList.urls')),
     path('showbinancedata/', include('showbinancedata.urls')),
     path('admin/', admin.site.urls),
+    # path(r'^detail_view/(?P<id>[0-9]+)/$', detail_view, name='detail_view'),
 ]

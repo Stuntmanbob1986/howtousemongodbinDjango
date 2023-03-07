@@ -58,8 +58,25 @@ def delete(request, id):
     return redirect('/datepicker')
 
 
-def edit(response, id):
+def edit(request, id=None):
+    template_name = 'todoList/datepicker.html'
+    form_class = PromiseForm
+    if id:
+        entry = get_object_or_404(Promise, pk=ObjectId(id))
+        print('id in if: ', id)
     print(id)
+
+
+def detail_view(request, id):
+    template_name = 'datepicker/detail_view.html'
+    model = Promise
+    form_class = PromiseForm
+    entry = entries.find_one({"_id": ObjectId(id)})
+    print(entry)
+
+    return render(request, template_name, {'entry': entry})
+
+
 
 
 # def home(response):
