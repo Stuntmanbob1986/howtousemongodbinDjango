@@ -85,9 +85,10 @@ def edit_view(request, id):
 
     if form.is_valid():
         form.save()
-        entries.find_one_and_update({"_id": ObjectId(id)}, {"$set": {"title": form.cleaned_data['title'],
+        entries.find_one_and_update({"_id": ObjectId(id)}, {"$set": {'title': form.cleaned_data['title'],
                                                                      'description': form.cleaned_data['description'],
-                                                                     'made_on': datetime.combine(form.cleaned_data['made_on'], datetime.min.time())}}, upsert=False)
+                                                                     'made_on': datetime.combine(form.cleaned_data['made_on'], datetime.min.time()),
+                                                                     'update': datetime.now()}}, upsert=False)
         # return HttpResponseRedirect("datepicker/")
         return redirect('/datepicker')
 
