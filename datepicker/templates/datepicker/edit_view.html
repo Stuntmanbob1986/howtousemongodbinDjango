@@ -1,0 +1,19 @@
+{% extends 'todoList/base.html' %}
+
+{% block title %}
+Update view
+{% endblock %}
+
+{% block content %}
+<h3>Update view</h3>
+<form action="" method="post" class="form-group">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        {{ form.as_p }}
+        <div class="input-group-prepend">
+            <button type="submit", name="Update" class="btn btn-success">Update</button>
+        </div>
+
+    </div>
+</form>
+{% endblock %}
